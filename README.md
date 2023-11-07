@@ -1,3 +1,11 @@
+
+Author: Aniel Flores-Lopez
+Email: aflores9@uoregon.edu
+Description: to be determined  
+
+
+
+
 # UOCIS322 - Project 4 #
 You'll learn how to write test cases and test your code, along with more JQuery.
 
