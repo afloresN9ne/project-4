@@ -4,6 +4,22 @@ Email: aflores9@uoregon.edu
 Description: to be determined  
 
 
+for this project we had to create the algorithm for the open and close times of control distances upto the brevet distance. both the control distances and 
+the brevet distance are chosen by the user, although the brevet distance is chosen from only a few options. this applcation is based on RUSA's online 
+calculator which has some specific methods of calculating what the open and close times will be for the control brevets given by the user. for the most 
+part the open/close time calculations are based off of the table below(for this assignment 1000-1300 wasnt implemented).
+
+Control location (km)	Minimum Speed (km/hr)	Maximum Speed (km/hr)
+    0 - 200	                 15                      34
+    200 - 400	                 15                      32
+    400 - 600	                 15	                 30
+    600 - 1000	               11.428  	                 28
+    1000 - 1300	               13.333                    26
+
+in order to run this program we use a dockerfile to build the image with the command Docker run -t image .  (. is included in command). where -t 
+then once the image is built you can run the container using a command like docker run -p 5001:5000 where 5001 and 5000 are port numbers chosen by the user
+where the right side is the port on your computer and the left sode is the port used by the cotainer. once the continer is running you then access the 
+webpage by opening your browser and typing in localhost:5000, replacing 5000 with whatever port you chose i the previous command  
 
 
 # UOCIS322 - Project 4 #

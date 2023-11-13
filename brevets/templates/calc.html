@@ -121,18 +121,32 @@
             // View flask_brevets.py for details.
             function calc_times(control) {
               var km = control.find("input[name='km']").val();
-              var open_time_field = control.find("input[name='open']");
+	      
+	      //my added code
+	      var bd = $('#brevet_dist_km').val();
+	      var begin = $('#begin_date').val();	     
+				     
+              // var might go here 
+              //end of my code
+              
+	      var open_time_field = control.find("input[name='open']");
               var close_time_field = control.find("input[name='close']");
 
-              $.getJSON(TIME_CALC_URL, {km: km}).done(
+              $.getJSON(TIME_CALC_URL, {km: km,bd:bd,begin:begin}).done(
                 function(data) {
                    var times = data.result;
                    console.log("Got a response: ");
                    console.log("Response.open = " + times.open);
-                   // This part will automatically fill the open and close slots,
+                   
+		   //added stuff
+		   console.log("open = "+ times.open )
+		   
+		   //end of stuff
+		   
+		   // This part will automatically fill the open and close slots,
                    // so don't worry about those.
-                   open_time_field.val(moment(times.open).format("YYYY-MM-DDTHH:mm"));
-                   close_time_field.val(moment(times.close).format("YYYY-MM-DDTHH:mm"));
+                   open_time_field.val(moment.utc(times.open).format("YYYY-MM-DDTHH:mm"));
+                   close_time_field.val(moment.utc(times.close).format("YYYY-MM-DDTHH:mm"));
                  }
                ).fail(function(err){
                  // In case you get an error...
